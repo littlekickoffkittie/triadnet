@@ -1712,3 +1712,47 @@
 2025-05-10 16:43:19,196 - INFO - No valid block found: {'hash': '0', 'nonce': '0', 'duration': 0.05934953689575195, 'coord': (0.31029891459135917, 0.030684677503732924, 0.6590164079049079), 'block_time': 0.059525251388549805, 'transactions': [('tx0', 'data_0'), ('tx1', 'data_1'), ('tx2', 'data_2'), ('tx3', 'data_3'), ('tx4', 'data_4')]}
 2025-05-10 16:43:20,239 - INFO - No valid block found: {'hash': '0', 'nonce': '0', 'duration': 0.0325169563293457, 'coord': (0.3602922905246274, 0.41544963373483695, 0.22425807574053563), 'block_time': 0.0327150821685791, 'transactions': [('tx0', 'data_0'), ('tx1', 'data_1'), ('tx2', 'data_2'), ('tx3', 'data_3'), ('tx4', 'data_4')]}
 2025-05-10 16:43:20,239 - INFO - No valid block found: {'hash': '0', 'nonce': '0', 'duration': 0.03304004669189453, 'coord': (0.3435612460451942, 0.24161259410870536, 0.4148261598461004), 'block_time': 0.03318524360656738, 'transactions': [('tx0', 'data_0'), ('tx1', 'data_1'), ('tx2', 'data_2'), ('tx3', 'data_3'), ('tx4', 'data_4')]}
+2025-05-10 20:35:21,629 - INFO - Miner initialized with address TRIAD57f33dcb0b5a9b3f471c0fabcf11ef40b8e749be
+2025-05-10 20:35:21,630 - INFO - Initial fractal coordinates: FractalCoordinate(a=125, b=335, c=320)
+2025-05-10 20:35:21,630 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:21,630 - INFO - Mining started at coordinates FractalCoordinate(a=125, b=335, c=320)
+2025-05-10 20:35:26,631 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:31,632 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:36,633 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:41,633 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:46,634 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:51,635 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:35:56,635 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:01,636 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:06,637 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:11,638 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:16,639 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:21,639 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:26,640 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:31,641 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:36,642 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:41,642 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:46,644 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:51,645 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:36:56,646 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:01,647 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:06,648 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:11,648 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:16,649 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:21,650 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:26,651 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:31,651 - ERROR - Mining error: Block.__init__() got an unexpected keyword argument 'prev_hash'
+2025-05-10 20:37:36,652 - INFO - Mining stopped
+2025-05-10 20:38:34,517 - INFO - Miner initialized with address TRIAD4d0088f52638017d682c3bd4194b8ca5922e3f34
+2025-05-10 20:38:34,517 - INFO - Initial fractal coordinates: FractalCoordinate(a=127, b=268, c=406)
+2025-05-10 20:38:34,523 - INFO - Mining started at coordinates FractalCoordinate(a=127, b=268, c=406)
+2025-05-10 20:38:35,241 - INFO - Block mined! Hash: 000029b875... Nonce: 13693 Time: 0.72s Difficulty: 5
+2025-05-10 20:38:35,242 - WARNING - Block validation failed
+2025-05-10 20:38:35,242 - WARNING - Failed to mine block, retrying...
+2025-05-10 20:39:09,649 - INFO - Block mined! Hash: 000005f40d... Nonce: 692189 Time: 33.41s Difficulty: 6
+2025-05-10 20:39:09,649 - WARNING - Block validation failed
+2025-05-10 20:39:09,649 - WARNING - Failed to mine block, retrying...
+2025-05-10 20:39:58,813 - WARNING - Failed to mine block, retrying...
+2025-05-10 20:40:48,500 - WARNING - Failed to mine block, retrying...
+2025-05-10 20:41:38,163 - WARNING - Failed to mine block, retrying...
+2025-05-10 20:41:39,164 - INFO - Mining stopped

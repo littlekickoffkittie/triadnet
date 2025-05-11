@@ -1,3 +1,5 @@
+# triadnet/mine.py
+
 import time
 import logging
 from typing import List, Optional, Dict
@@ -42,17 +44,24 @@ class Miner:
         self.blockchain = blockchain
         self.fractal_coord = fractal_coord
         self.auto_adjust_coords = auto_adjust_coords
+        
+        # Initialize consensus
         self.consensus = ConsensusManager(blockchain)
+        
+        # Initialize mining state
         self._mining = False
         self._mining_thread: Optional[threading.Thread] = None
         self._pending_transactions: Queue = Queue()
         self.stats = MiningStats()
-        self.logger = logging.getLogger("triadnet.miner")
+        
+        # Setup logging
+        self.logger = logging.getLogger('triadnet.miner')
         handler = logging.StreamHandler()
-        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         handler.setFormatter(formatter)
         self.logger.addHandler(handler)
         self.logger.setLevel(logging.INFO)
+        
         self.logger.info(f"Miner initialized with address {wallet.address}")
         self.logger.info(f"Initial fractal coordinates: {fractal_coord}")
 
@@ -79,12 +88,16 @@ class Miner:
     def _mine_loop(self):
         while self._mining:
             try:
+                # Create new block
                 block = self.consensus.create_block(
                     miner_address=self.wallet.address,
                     fractal_coord=self.fractal_coord
                 )
+                
+                # Try to mine it
                 self.logger.info(f"Mining block {block.index} with {len(block.transactions)} transactions...")
                 result = self.consensus.mine_block(block)
+                
                 if result.success:
                     self.stats.update_block_mined(BLOCK_REWARD)
                     self.logger.info(
@@ -92,6 +105,8 @@ class Miner:
                         f"Nonce: {result.nonce} Time: {result.duration:.2f}s "
                         f"Reward: {BLOCK_REWARD} TRIAD"
                     )
+                    
+                    # Adjust coordinates if needed
                     if self.auto_adjust_coords:
                         self._adjust_fractal_coordinates(result.duration)
                 else:
@@ -99,22 +114,27 @@ class Miner:
                         f"Failed to mine block after {result.duration:.2f}s, "
                         "adjusting parameters and retrying..."
                     )
-                    time.sleep(1)
+                    time.sleep(1)  # Brief pause before retrying
+                    
             except Exception as e:
                 self.logger.error(f"Mining error: {str(e)}")
-                time.sleep(5)
+                time.sleep(5)  # Longer pause on error
 
     def _adjust_fractal_coordinates(self, last_block_time: float):
         if not self.auto_adjust_coords:
             return
-        if last_block_time > 120:
+            
+        # If mining took too long, try to find an easier spot
+        if last_block_time > 120:  # If it took more than 2 minutes
             self.fractal_coord = FractalCoordinate(
                 a=self.fractal_coord.a + 50,
                 b=self.fractal_coord.b + 50,
                 c=self.fractal_coord.c + 50
             )
             self.logger.info(f"Adjusted coordinates to find easier mining spot: {self.fractal_coord}")
-        elif last_block_time < 10:
+            
+        # If mining was very fast, try to find a more challenging spot
+        elif last_block_time < 10:  # If it took less than 10 seconds
             self.fractal_coord = FractalCoordinate(
                 a=max(0, self.fractal_coord.a - 50),
                 b=max(0, self.fractal_coord.b - 50),
@@ -138,9 +158,9 @@ class Miner:
                 "total_time": f"{self.stats.total_time:.2f}s",
                 "total_reward": f"{self.stats.total_reward:.2f} TRIAD",
                 "hash_rate": f"{self.stats.hash_rate:.2f} blocks/hour",
-                "mining_start": datetime.fromtimestamp(self.stats.start_time).strftime("%Y-%m-%d %H:%M:%S"),
-                "last_block": datetime.fromtimestamp(self.stats.last_block_time).strftime("%Y-%m-%d %H:%M:%S") if self.stats.last_block_time else "Never"
+                "mining_start": datetime.fromtimestamp(self.stats.start_time).strftime('%Y-%m-%d %H:%M:%S'),
+                "last_block": datetime.fromtimestamp(self.stats.last_block_time).strftime('%Y-%m-%d %H:%M:%S') if self.stats.last_block_time else "Never"
             },
             "chain_height": len(self.blockchain.chain),
-            "timestamp": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+            "timestamp": datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
         }

@@ -1,7 +1,7 @@
 # Python
 __pycache__/
 *.py[cod]
-*.class
+*$py.class
 *.so
 .Python
 build/
@@ -30,6 +30,10 @@ ENV/
 *.swp
 *.swo
 
-# Project-specific
-blocks.json
-mining.log
+# Logs
+*.log
+
+# Local development
+.env
+.env.local
+.env.*.local

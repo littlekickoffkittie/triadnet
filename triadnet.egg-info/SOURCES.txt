@@ -16,6 +16,7 @@ triadnet/wallet.py
 triadnet.egg-info/PKG-INFO
 triadnet.egg-info/SOURCES.txt
 triadnet.egg-info/dependency_links.txt
+triadnet.egg-info/requires.txt
 triadnet.egg-info/top_level.txt
 triadnet/consensus/__init__.py
 triadnet/consensus/proof_of_work.py
@@ -24,5 +25,6 @@ triadnet/core/block.py
 triadnet/core/blockchain.py
 triadnet/core/fractal_coordinate.py
 triadnet/core/transaction.py
+triadnet/core/wallet.py
 triadnet/crypto/__init__.py
 triadnet/crypto/hashing.py
