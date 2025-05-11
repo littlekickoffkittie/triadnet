@@ -1,5 +1,3 @@
-echo '# TriadNet: A Fractal-Based Blockchain Implementation
-
 Current Version: 0.1 (as of 2025-05-11)
 
 ## Overview
